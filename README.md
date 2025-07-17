@@ -1,43 +1,43 @@
-## 🌍 Multilingual Voice Translation System
+SYSTEME DE TRADUCTION VOCALE MULTILANGUES
+Ce projet est une application de traduction vocale multilingue en temps réel, développé dans un cadre collaboratif par une équipe, répartis en 5 groupes fonctionnels.
 
-Ce projet est une application de **traduction vocale multilingue en temps réel**, développée dans un cadre collaboratif par une équipe de 30 stagiaires, répartis en 5 groupes fonctionnels.
+Objectif
+Permettre à un utilisateur de parler dans sa langue, faire transcrire automatisation sa voix en texte, conduire ce texte dans une autre langue, puis diffuser la traduction vocalement et visuellement à d'autres utilisateurs connectés.
 
-### 🎯 Objectif
+Architecture Modulaire (5 groupes fonctionnels)
+Groupe Fonction Technologies
+1 Capture de la voix et conversion en texte Python + Whisper
+2 Interface utilisateur et envoi du texte à travail Web (HTML/JS) ou client Python
+3 Flacon multiligne automatique de traduction (API), HuggingFace, mBART50
+4 Diffusion du texte et audio traduit WebRTC, gTTS / Coqui TTS
+5 Backend centralisé pour coordonner les modifications Flask REST API, JSON, HTTP
 
-Permettre à un utilisateur de parler dans sa langue, faire transcrire automatiquement sa voix en texte, traduire ce texte dans une autre langue, puis diffuser la traduction vocalement et visuellement à d'autres utilisateurs connectés.
+Fonctionnalités principales
+Transcription vocale : la voix de l'utilisateur est convertie en texte via Whisper.
 
----
+Traduction automatique : le texte est traduit dans la langue choisie avec mBART50.
 
-### 🧩 Architecture Modulaire (5 groupes fonctionnels)
+Restitution audio : le texte traduit est reconverti en voix (TTS) et diffusé aux utilisateurs.
 
-| Groupe | Fonction                                           | Technologies                   |
-| ------ | -------------------------------------------------- | ------------------------------ |
-| **1**  | Capture de la voix et conversion en texte          | Python + Whisper               |
-| **2**  | Interface utilisateur et envoi du texte à traduire | Web (HTML/JS) ou client Python |
-| **3**  | Traduction automatique multilingue (API)           | Flask, HuggingFace, mBART50    |
-| **4**  | Diffusion du texte et audio traduit                | WebRTC, gTTS / Coqui TTS       |
-| **5**  | Backend centralisé pour coordonner les échanges    | Flask REST API, JSON, HTTP     |
+Communication inter-groupe : tout passe par un backend central en JSON via HTTP POST/GET.
 
----
+Optimisation des performances : détection automatique de la langue source + système de cache LRU pour éviter les traductions redondantes.
 
-### 🚀 Fonctionnalités principales
+Technologies utilisées
+Python 3.10+
 
-* 🎤 **Transcription vocale** : la voix de l'utilisateur est convertie en texte via Whisper.
-* 🌐 **Traduction automatique** : le texte est traduit dans la langue choisie avec mBART50.
-* 🔈 **Restitution audio** : le texte traduit est reconverti en voix (TTS) et diffusé aux utilisateurs.
-* 🔁 **Communication inter-groupe** : tout passe par un **backend central** en JSON via HTTP POST/GET.
-* ⚡ **Optimisation des performances** : détection automatique de la langue source + système de cache LRU pour éviter les traductions redondantes.
+Flacon
 
----
+Transformateurs HuggingFace (mBART50)
 
-### 📦 Technologies utilisées
+Murmure (parole-texte)
 
-* Python 3.10+
-* Flask
-* HuggingFace Transformers (mBART50)
-* Whisper (speech-to-text)
-* gTTS / Coqui TTS (text-to-speech)
-* Langdetect
-* Cachetools
-* WebRTC (pour la diffusion en temps réel)
-* HTML/CSS/JavaScript (pour l’interface)
+gTTS / Coqui TTS (texte-parole)
+
+Détection de langage
+
+Outils de cachet
+
+WebRTC (pour la diffusion en temps réel)
+
+HTML/CSS/JavaScript 
